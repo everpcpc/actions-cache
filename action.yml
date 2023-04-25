@@ -1,6 +1,6 @@
-name: "s3 cache"
-author: tespkg
-description: "S3 actions cache with actions/cache@v2 passthrough"
+name: "cloud cache"
+author: everpcpc
+description: "Actions cache to multiple cloud provider with OpenDAL."
 inputs:
   provider:
     description: "Storage provider"
@@ -28,7 +28,7 @@ inputs:
   use-fallback:
     description: "Use github actions/cache as fallback"
     required: false
-    default: "true"
+    default: "false"
 outputs:
   cache-hit:
     description: "A boolean value to indicate an exact match was found for the primary key"
