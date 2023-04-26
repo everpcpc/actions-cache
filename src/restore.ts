@@ -52,13 +52,13 @@ async function restoreCache() {
       core.debug("found cache object");
       saveMatchedKey(matchingKey);
       core.info(
-        `Downloading cache from s3 to ${archivePath}. bucket: ${bucket}, object: ${obj}`
+        `Downloading cache from s3 to ${archivePath}. bucket: ${bucket}, root: ${root}, object: ${obj}`
       );
       const req = await op.presignRead(obj, 600);
 
-      core.info(`Presigned request Method: ${req.method}, Url: ${req.url}`);
+      core.debug(`Presigned request Method: ${req.method}, Url: ${req.url}`);
       for (const key in req.headers) {
-        core.info(`Header: ${key}: ${req.headers[key]}`);
+        core.debug(`Header: ${key}: ${req.headers[key]}`);
       }
       await axios({
         method: req.method,

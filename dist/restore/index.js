@@ -59244,11 +59244,11 @@ function restoreCache() {
                 const { item: obj, metadata, matchingKey } = yield utils_1.findObject(op, key, restoreKeys, compressionMethod);
                 core.debug("found cache object");
                 utils_1.saveMatchedKey(matchingKey);
-                core.info(`Downloading cache from s3 to ${archivePath}. bucket: ${bucket}, object: ${obj}`);
+                core.info(`Downloading cache from s3 to ${archivePath}. bucket: ${bucket}, root: ${root}, object: ${obj}`);
                 const req = yield op.presignRead(obj, 600);
-                core.info(`Presigned request Method: ${req.method}, Url: ${req.url}`);
+                core.debug(`Presigned request Method: ${req.method}, Url: ${req.url}`);
                 for (const key in req.headers) {
-                    core.info(`Header: ${key}: ${req.headers[key]}`);
+                    core.debug(`Header: ${key}: ${req.headers[key]}`);
                 }
                 yield axios_1.default({
                     method: req.method,

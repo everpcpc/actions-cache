@@ -54992,13 +54992,13 @@ function saveCache() {
                     yield tar_1.listTar(archivePath, compressionMethod);
                 }
                 const object = path.posix.join(key, cacheFileName);
-                core.info(`Uploading tar to s3. Bucket: ${bucket}, Object: ${object}`);
+                core.info(`Uploading tar to s3. Bucket: ${bucket}, root: ${root}, Object: ${object}`);
                 const data = fs.createReadStream(archivePath);
                 const req = yield op.presignWrite(object, 600);
-                core.info(`Presigned request Method: ${req.method}, Url: ${req.url}`);
+                core.debug(`Presigned request Method: ${req.method}, Url: ${req.url}`);
                 const headers = {};
                 for (const key in req.headers) {
-                    core.info(`Header: ${key}: ${req.headers[key]}`);
+                    core.debug(`Header: ${key}: ${req.headers[key]}`);
                     headers[key] = req.headers[key];
                 }
                 headers["Content-Length"] = fs.statSync(archivePath).size.toString();
