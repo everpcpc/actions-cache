@@ -59250,14 +59250,13 @@ function restoreCache() {
                 for (const key in req.headers) {
                     core.debug(`Header: ${key}: ${req.headers[key]}`);
                 }
-                yield axios_1.default({
+                const response = yield axios_1.default({
                     method: req.method,
                     url: req.url,
                     headers: req.headers,
                     responseType: "stream",
-                }).then((response) => {
-                    response.data.pipe(fs.createWriteStream(archivePath));
                 });
+                yield fs.promises.writeFile(archivePath, response.data);
                 if (core.isDebug()) {
                     yield tar_1.listTar(archivePath, compressionMethod);
                 }

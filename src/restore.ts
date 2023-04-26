@@ -60,14 +60,13 @@ async function restoreCache() {
       for (const key in req.headers) {
         core.debug(`Header: ${key}: ${req.headers[key]}`);
       }
-      await axios({
+      const response = await axios({
         method: req.method,
         url: req.url,
         headers: req.headers,
         responseType: "stream",
-      }).then((response) => {
-        response.data.pipe(fs.createWriteStream(archivePath));
       });
+      await fs.promises.writeFile(archivePath, response.data);
 
       if (core.isDebug()) {
         await listTar(archivePath, compressionMethod);
