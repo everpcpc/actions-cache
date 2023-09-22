@@ -57967,7 +57967,7 @@ function restoreCache() {
                 const { item: obj, metadata, matchingKey } = yield utils_1.findObject(op, key, restoreKeys, compressionMethod);
                 core.debug("found cache object");
                 utils_1.saveMatchedKey(matchingKey);
-                core.info(`Downloading cache from s3 to ${archivePath}. bucket: ${bucket}, root: ${root}, object: ${obj}`);
+                core.info(`Downloading cache from ${provider} to ${archivePath}. bucket: ${bucket}, root: ${root}, object: ${obj}`);
                 const req = yield op.presignRead(obj, 600);
                 core.debug(`Presigned request Method: ${req.method}, Url: ${req.url}`);
                 for (const key in req.headers) {
@@ -57990,10 +57990,10 @@ function restoreCache() {
                 core.info(`Cache Size: ${utils_1.formatSize(size)} (${size} bytes)`);
                 yield tar_1.extractTar(archivePath, compressionMethod);
                 utils_1.setCacheHitOutput(matchingKey === key);
-                core.info("Cache restored from s3 successfully");
+                core.info(`Cache restored from ${provider} successfully`);
             }
             catch (e) {
-                core.info("Restore s3 cache failed: " + e);
+                core.info(`Restore ${provider} cache failed: ${e}`);
                 utils_1.setCacheHitOutput(false);
                 if (useFallback) {
                     if (utils_1.isGhes()) {

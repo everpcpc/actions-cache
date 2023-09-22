@@ -55135,7 +55135,7 @@ function saveCache() {
                     yield tar_1.listTar(archivePath, compressionMethod);
                 }
                 const object = path.posix.join(key, cacheFileName);
-                core.info(`Uploading tar to s3. Bucket: ${bucket}, root: ${root}, Object: ${object}`);
+                core.info(`Uploading tar to ${provider}. Bucket: ${bucket}, root: ${root}, Object: ${object}`);
                 const data = fs.createReadStream(archivePath);
                 const req = yield op.presignWrite(object, 600);
                 core.debug(`Presigned request Method: ${req.method}, Url: ${req.url}`);
@@ -55151,10 +55151,10 @@ function saveCache() {
                     headers: headers,
                     data: data,
                 });
-                core.info("Cache saved to s3 successfully");
+                core.info(`Cache saved to ${provider} successfully`);
             }
             catch (e) {
-                core.info("Save s3 cache failed: " + e);
+                core.info(`Save ${provider} cache failed: ${e}`);
                 if (useFallback) {
                     if (utils_1.isGhes()) {
                         core.warning("Cache fallback is not supported on Github Enterpise.");

@@ -52,7 +52,7 @@ async function restoreCache() {
       core.debug("found cache object");
       saveMatchedKey(matchingKey);
       core.info(
-        `Downloading cache from s3 to ${archivePath}. bucket: ${bucket}, root: ${root}, object: ${obj}`
+        `Downloading cache from ${provider} to ${archivePath}. bucket: ${bucket}, root: ${root}, object: ${obj}`
       );
       const req = await op.presignRead(obj, 600);
 
@@ -79,9 +79,9 @@ async function restoreCache() {
 
       await extractTar(archivePath, compressionMethod);
       setCacheHitOutput(matchingKey === key);
-      core.info("Cache restored from s3 successfully");
+      core.info(`Cache restored from ${provider} successfully`);
     } catch (e) {
-      core.info("Restore s3 cache failed: " + e);
+      core.info(`Restore ${provider} cache failed: ${e}`);
       setCacheHitOutput(false);
       if (useFallback) {
         if (isGhes()) {
