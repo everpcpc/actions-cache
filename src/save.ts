@@ -5,7 +5,6 @@ import * as core from "@actions/core";
 import * as path from "path";
 import { State } from "./state";
 import { Operator } from "opendal";
-import axios from "axios";
 import * as fs from "fs";
 import {
   getInputAsArray,
@@ -54,21 +53,8 @@ async function saveCache() {
       const object = path.posix.join(key, cacheFileName);
 
       core.info(`Uploading tar to ${provider}. Bucket: ${bucket}, root: ${root}, Object: ${object}`);
-      const data = fs.createReadStream(archivePath);
-      const req = await op.presignWrite(object, 600);
-      core.debug(`Presigned request Method: ${req.method}, Url: ${req.url}`);
-      const headers: Record<string, string> = {};
-      for (const key in req.headers) {
-        core.debug(`Header: ${key}: ${req.headers[key]}`);
-        headers[key] = req.headers[key];
-      }
-      headers["Content-Length"] = fs.statSync(archivePath).size.toString();
-      await axios({
-        method: req.method,
-        url: req.url,
-        headers: headers,
-        data: data,
-      });
+      const data = await fs.promises.readFile(archivePath);
+      await op.write(object, data);
       core.info(`Cache saved to ${provider} successfully`);
     } catch (e) {
       core.info(`Save ${provider} cache failed: ${e}`);

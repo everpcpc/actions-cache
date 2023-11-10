@@ -15,7 +15,6 @@ import {
   setCacheHitOutput,
   saveMatchedKey,
 } from "./utils";
-import axios from "axios";
 
 process.on("uncaughtException", (e) => core.info("warning: " + e.message));
 
@@ -54,19 +53,8 @@ async function restoreCache() {
       core.info(
         `Downloading cache from ${provider} to ${archivePath}. bucket: ${bucket}, root: ${root}, object: ${obj}`
       );
-      const req = await op.presignRead(obj, 600);
-
-      core.debug(`Presigned request Method: ${req.method}, Url: ${req.url}`);
-      for (const key in req.headers) {
-        core.debug(`Header: ${key}: ${req.headers[key]}`);
-      }
-      const response = await axios({
-        method: req.method,
-        url: req.url,
-        headers: req.headers,
-        responseType: "stream",
-      });
-      await fs.promises.writeFile(archivePath, response.data);
+      const data = await op.read(obj);
+      await fs.promises.writeFile(archivePath, data);
 
       if (core.isDebug()) {
         await listTar(archivePath, compressionMethod);
