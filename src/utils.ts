@@ -129,10 +129,8 @@ export async function listObjects(
     prefix += "/";
   }
   let r: string[] = [];
-  core.debug(`Listing objects with prefix: ${prefix}`);
   const list = await op.list(prefix, { recursive: true });
   for (let entry of list) {
-    core.debug(`Checking list entry: ${JSON.stringify(entry)}`);
     let meta = await op.stat(entry.path());
     if (meta.isFile()) {
       r.push(entry.path());
