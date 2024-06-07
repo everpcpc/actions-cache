@@ -23,7 +23,7 @@ jobs:
       - name: Corepack setup
         run: corepack enable
       - name: Install Deps
-        run: pnpm install --ignore-platform --pure-lockfile
+        run: pnpm install --lockfile-only
       - name: Ensure dist/ folder is up-to-date
         run: |
           pnpm build
