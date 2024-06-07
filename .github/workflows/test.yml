@@ -14,21 +14,16 @@ jobs:
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
         with:
           version: "9.2.0"
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
-      - name: Corepack setup
-        run: corepack enable
-      - name: Install Deps
-        run: |
-          pnpm install --frozen-lockfile
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
       - name: Ensure dist/ folder is up-to-date
         run: |
           pnpm build
@@ -54,8 +49,7 @@ jobs:
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Generate files in working directory
         shell: bash
         run: src/create-cache-files.sh ${{ runner.os }} test-cache
@@ -86,8 +80,7 @@ jobs:
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Restore cache
         uses: ./
         env:
@@ -118,8 +111,7 @@ jobs:
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Restore cache
         uses: ./
         env:
