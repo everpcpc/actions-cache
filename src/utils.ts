@@ -128,7 +128,7 @@ export async function listObjects(
   if (!prefix.endsWith("/")) {
     prefix += "/";
   }
-  const r: string[] = [];
+  let r: string[] = [];
   core.debug(`Listing objects with prefix: ${prefix}`);
   const list = await op.list(prefix, { recursive: true });
   for (let entry of list) {
