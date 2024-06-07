@@ -29,7 +29,6 @@ jobs:
       - name: Install Deps
         run: |
           pnpm install --frozen-lockfile
-          pnpm list
       - name: Ensure dist/ folder is up-to-date
         run: |
           pnpm build
