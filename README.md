@@ -22,7 +22,7 @@ jobs:
     runs-on: [ubuntu-latest]
 
     steps:
-      - uses: everpcpc/actions-cache@v1
+      - uses: everpcpc/actions-cache@v2
         env:
           AWS_ACCESS_KEY_ID: Q3AM3UQ867SPQQA43P2F
           AWS_SECRET_ACCESS_KEY: zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG
@@ -65,7 +65,7 @@ jobs:
            role-duration-seconds: 1500
            role-to-assume: arn:aws:iam::00000000:role/ci
            aws-region: us-east-2
-      - uses: everpcpc/actions-cache@v1
+      - uses: everpcpc/actions-cache@v2
         with:
           bucket: ci # required
           root: test # optional
@@ -86,12 +86,12 @@ as prefix in object names and use the latest one
 
 When using this with Amazon S3, the following permissions are necessary:
 
- - `s3:PutObject`
- - `s3:GetObject`
- - `s3:ListBucket`
- - `s3:GetBucketLocation`
- - `s3:ListBucketMultipartUploads`
- - `s3:ListMultipartUploadParts`
+- `s3:PutObject`
+- `s3:GetObject`
+- `s3:ListBucket`
+- `s3:GetBucketLocation`
+- `s3:ListBucketMultipartUploads`
+- `s3:ListMultipartUploadParts`
 
 # Note on release
 
