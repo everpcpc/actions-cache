@@ -129,7 +129,9 @@ export async function listObjects(
     prefix += "/";
   }
   const r: string[] = [];
-  const list = await op.list(prefix);
+  const list = await op.list(prefix, {
+    recursive: true,
+  });
   for (let entry of list) {
     let meta = await op.stat(entry.path());
     if (meta.isFile()) {
