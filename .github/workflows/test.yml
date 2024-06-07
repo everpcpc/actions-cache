@@ -73,7 +73,7 @@ jobs:
           bucket: actions-cache
           root: opendal
           use-fallback: false
-          key: test/${{ runner.os }}/${{ github.run_id }}
+          key: test/${{ runner.os }}/${{ github.run_id }}/${{ github.sha }}
           path: |
             test-cache
             ~/test-cache
@@ -99,7 +99,7 @@ jobs:
           bucket: actions-cache
           root: opendal
           use-fallback: false
-          key: test/${{ runner.os }}/${{ github.run_id }}
+          key: test/${{ runner.os }}/${{ github.run_id }}/${{ github.sha }}
           path: |
             test-cache
             ~/test-cache
@@ -131,7 +131,7 @@ jobs:
           bucket: actions-cache
           root: opendal
           use-fallback: false
-          key: test/${{ runner.os }}/${{ github.run_id }}/${{ github.sha }}
+          key: test/${{ runner.os }}/keys/${{ github.run_id }}/${{ github.sha }}/
           path: |
             test-cache
             ~/test-cache
