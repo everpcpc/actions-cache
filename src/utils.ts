@@ -91,7 +91,7 @@ export async function findObject(
     if (objects.length < 1) {
       continue;
     }
-    let metadata: opendal.Metadata = await op.stat(objects[0]);;
+    let metadata: opendal.Metadata = await op.stat(objects[0]);
     let object: string = objects[0];
     for (const obj of objects) {
       const m = await op.stat(obj);
@@ -128,14 +128,13 @@ export async function listObjects(
   if (!prefix.endsWith("/")) {
     prefix += "/";
   }
-  const r: string[] = [];
-  const lister = await op.scan(prefix);
-  while (true) {
-    const entry = await lister.next();
-    if (entry === null) {
-      break;
+  let r: string[] = [];
+  const list = await op.list(prefix, { recursive: true });
+  for (let entry of list) {
+    let meta = await op.stat(entry.path());
+    if (meta.isFile()) {
+      r.push(entry.path());
     }
-    r.push(entry.path());
   }
   return r;
 }

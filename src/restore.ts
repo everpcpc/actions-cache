@@ -15,6 +15,7 @@ import {
   setCacheHitOutput,
   saveMatchedKey,
 } from "./utils";
+import { finished, pipeline } from "node:stream/promises";
 
 process.on("uncaughtException", (e) => core.info("warning: " + e.message));
 
@@ -42,20 +43,21 @@ async function restoreCache() {
         cacheFileName
       );
 
-      const { item: obj, metadata, matchingKey } = await findObject(
-        op,
-        key,
-        restoreKeys,
-        compressionMethod
-      );
+      const {
+        item: obj,
+        metadata,
+        matchingKey,
+      } = await findObject(op, key, restoreKeys, compressionMethod);
       core.debug("found cache object");
       saveMatchedKey(matchingKey);
       core.info(
         `Downloading cache from ${provider} to ${archivePath}. bucket: ${bucket}, root: ${root}, object: ${obj}`
       );
-      const data = await op.read(obj);
-      await fs.promises.writeFile(archivePath, data);
-
+      const r = await op.reader(obj);
+      const rs = r.createReadStream();
+      const ws = fs.createWriteStream(archivePath);
+      await pipeline(rs, ws);
+      await finished(rs);
       if (core.isDebug()) {
         await listTar(archivePath, compressionMethod);
       }

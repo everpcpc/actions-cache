@@ -12,6 +12,7 @@ import {
   isExactKeyMatch,
   getInputAsBoolean,
 } from "./utils";
+import { finished, pipeline } from "node:stream/promises";
 
 process.on("uncaughtException", (e) => core.info("warning: " + e.message));
 
@@ -52,9 +53,14 @@ async function saveCache() {
 
       const object = path.posix.join(key, cacheFileName);
 
-      core.info(`Uploading tar to ${provider}. Bucket: ${bucket}, root: ${root}, Object: ${object}`);
-      const data = await fs.promises.readFile(archivePath);
-      await op.write(object, data);
+      core.info(
+        `Uploading tar to ${provider}. Bucket: ${bucket}, root: ${root}, Object: ${object}`
+      );
+      const rs = fs.createReadStream(archivePath);
+      const w = await op.writer(object);
+      const ws = w.createWriteStream();
+      await pipeline(rs, ws);
+      await finished(rs);
       core.info(`Cache saved to ${provider} successfully`);
     } catch (e) {
       core.info(`Save ${provider} cache failed: ${e}`);
