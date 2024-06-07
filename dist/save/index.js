@@ -61850,6 +61850,7 @@ const state_1 = __nccwpck_require__(5753);
 const opendal_1 = __nccwpck_require__(6397);
 const fs = __importStar(__nccwpck_require__(7147));
 const utils_1 = __nccwpck_require__(442);
+const promises_1 = __nccwpck_require__(6402);
 process.on("uncaughtException", (e) => core.info("warning: " + e.message));
 function saveCache() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -61882,8 +61883,11 @@ function saveCache() {
                 }
                 const object = path.posix.join(key, cacheFileName);
                 core.info(`Uploading tar to ${provider}. Bucket: ${bucket}, root: ${root}, Object: ${object}`);
-                const data = yield fs.promises.readFile(archivePath);
-                yield op.write(object, data);
+                const rs = fs.createReadStream(archivePath);
+                const w = yield op.writer(object);
+                const ws = w.createWriteStream();
+                yield (0, promises_1.pipeline)(rs, ws);
+                yield (0, promises_1.finished)(rs);
                 core.info(`Cache saved to ${provider} successfully`);
             }
             catch (e) {
@@ -62068,10 +62072,8 @@ function listObjects(op, prefix) {
             prefix += "/";
         }
         let r = [];
-        core.debug(`Listing objects with prefix: ${prefix}`);
         const list = yield op.list(prefix, { recursive: true });
         for (let entry of list) {
-            core.debug(`Checking list entry: ${JSON.stringify(entry)}`);
             let meta = yield op.stat(entry.path());
             if (meta.isFile()) {
                 r.push(entry.path());
@@ -62465,6 +62467,14 @@ module.exports = require("node:process");
 
 "use strict";
 module.exports = require("node:stream");
+
+/***/ }),
+
+/***/ 6402:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:stream/promises");
 
 /***/ }),
 

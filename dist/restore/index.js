@@ -61850,6 +61850,7 @@ const opendal_1 = __nccwpck_require__(6397);
 const state_1 = __nccwpck_require__(5753);
 const fs = __importStar(__nccwpck_require__(7147));
 const utils_1 = __nccwpck_require__(442);
+const promises_1 = __nccwpck_require__(6402);
 process.on("uncaughtException", (e) => core.info("warning: " + e.message));
 function restoreCache() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -61869,12 +61870,19 @@ function restoreCache() {
                 const compressionMethod = yield utils.getCompressionMethod();
                 const cacheFileName = utils.getCacheFileName(compressionMethod);
                 const archivePath = path.join(yield utils.createTempDirectory(), cacheFileName);
-                const { item: obj, metadata, matchingKey } = yield (0, utils_1.findObject)(op, key, restoreKeys, compressionMethod);
+                const { item: obj, metadata, matchingKey, } = yield (0, utils_1.findObject)(op, key, restoreKeys, compressionMethod);
                 core.debug("found cache object");
                 (0, utils_1.saveMatchedKey)(matchingKey);
                 core.info(`Downloading cache from ${provider} to ${archivePath}. bucket: ${bucket}, root: ${root}, object: ${obj}`);
-                const data = yield op.read(obj);
-                yield fs.promises.writeFile(archivePath, data);
+                // const rs = fs.createReadStream(archivePath);
+                // const w = await op.writer(object);
+                // const ws = w.createWriteStream();
+                // rs.pipe(ws);
+                const r = yield op.reader(obj);
+                const rs = r.createReadStream();
+                const ws = fs.createWriteStream(archivePath);
+                yield (0, promises_1.pipeline)(rs, ws);
+                yield (0, promises_1.finished)(rs);
                 if (core.isDebug()) {
                     yield (0, tar_1.listTar)(archivePath, compressionMethod);
                 }
@@ -62073,10 +62081,8 @@ function listObjects(op, prefix) {
             prefix += "/";
         }
         let r = [];
-        core.debug(`Listing objects with prefix: ${prefix}`);
         const list = yield op.list(prefix, { recursive: true });
         for (let entry of list) {
-            core.debug(`Checking list entry: ${JSON.stringify(entry)}`);
             let meta = yield op.stat(entry.path());
             if (meta.isFile()) {
                 r.push(entry.path());
@@ -62470,6 +62476,14 @@ module.exports = require("node:process");
 
 "use strict";
 module.exports = require("node:stream");
+
+/***/ }),
+
+/***/ 6402:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:stream/promises");
 
 /***/ }),
 
