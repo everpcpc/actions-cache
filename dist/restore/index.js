@@ -62072,9 +62072,11 @@ function listObjects(op, prefix) {
         if (!prefix.endsWith("/")) {
             prefix += "/";
         }
-        const r = [];
-        const list = yield op.list(prefix);
+        let r = [];
+        core.debug(`Listing objects with prefix: ${prefix}`);
+        const list = yield op.list(prefix, { recursive: true });
         for (let entry of list) {
+            core.debug(`Checking list entry: ${JSON.stringify(entry)}`);
             let meta = yield op.stat(entry.path());
             if (meta.isFile()) {
                 r.push(entry.path());
