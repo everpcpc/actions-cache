@@ -2,8 +2,6 @@
 
 This action enables caching dependencies to cloud storage supported by [OpenDAL](https://github.com/apache/incubator-opendal), e.g. minio, AWS S3
 
-It also has github [actions/cache@v2](https://github.com/actions/cache) fallback if s3 save & restore fails
-
 Fork from: https://github.com/tespkg/actions-cache
 
 ## Usage
