@@ -8,6 +8,8 @@ Fork from: https://github.com/tespkg/actions-cache
 
 ## Usage
 
+### AWS S3
+
 ```yaml
 name: dev ci
 
@@ -75,6 +77,40 @@ jobs:
           key: ${{ runner.os }}/yarn/${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}/yarn/
+```
+
+### Google Cloud Storage
+
+```yaml
+name: dev ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build_test:
+    runs-on: [ubuntu-latest]
+
+    steps:
+      - uses: everpcpc/actions-cache@v2
+        with:
+          provider: gcs
+          bucket: "example-ci-bucket"
+          root: "cloud/cache"
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: |
+            test/${{ runner.os }}/go/${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            test/${{ runner.os }}/go/
 ```
 
 ## Restore keys
