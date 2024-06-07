@@ -61874,10 +61874,6 @@ function restoreCache() {
                 core.debug("found cache object");
                 (0, utils_1.saveMatchedKey)(matchingKey);
                 core.info(`Downloading cache from ${provider} to ${archivePath}. bucket: ${bucket}, root: ${root}, object: ${obj}`);
-                // const rs = fs.createReadStream(archivePath);
-                // const w = await op.writer(object);
-                // const ws = w.createWriteStream();
-                // rs.pipe(ws);
                 const r = yield op.reader(obj);
                 const rs = r.createReadStream();
                 const ws = fs.createWriteStream(archivePath);
