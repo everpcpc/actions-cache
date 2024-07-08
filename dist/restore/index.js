@@ -1,35 +1,35 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 2427:
+/***/ 1157:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 module.exports = require(__nccwpck_require__.ab + "opendal.darwin-arm64.node")
 
 /***/ }),
 
-/***/ 9243:
+/***/ 3410:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 module.exports = require(__nccwpck_require__.ab + "opendal.darwin-x64.node")
 
 /***/ }),
 
-/***/ 6991:
+/***/ 5143:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 module.exports = require(__nccwpck_require__.ab + "opendal.linux-arm64-gnu.node")
 
 /***/ }),
 
-/***/ 216:
+/***/ 7143:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 module.exports = require(__nccwpck_require__.ab + "opendal.linux-x64-gnu.node")
 
 /***/ }),
 
-/***/ 5770:
+/***/ 6337:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 module.exports = require(__nccwpck_require__.ab + "opendal.win32-x64-msvc.node")
@@ -35674,7 +35674,7 @@ function plural(ms, msAbs, n, name) {
 
 /***/ }),
 
-/***/ 1683:
+/***/ 9213:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /*
@@ -35767,7 +35767,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = __nccwpck_require__(802)
           } else {
-            nativeBinding = __nccwpck_require__(5770)
+            nativeBinding = __nccwpck_require__(6337)
           }
         } catch (e) {
           loadError = e
@@ -35822,7 +35822,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = __nccwpck_require__(51)
           } else {
-            nativeBinding = __nccwpck_require__(9243)
+            nativeBinding = __nccwpck_require__(3410)
           }
         } catch (e) {
           loadError = e
@@ -35836,7 +35836,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = __nccwpck_require__(3627)
           } else {
-            nativeBinding = __nccwpck_require__(2427)
+            nativeBinding = __nccwpck_require__(1157)
           }
         } catch (e) {
           loadError = e
@@ -35885,7 +35885,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = __nccwpck_require__(5177)
             } else {
-              nativeBinding = __nccwpck_require__(216)
+              nativeBinding = __nccwpck_require__(7143)
             }
           } catch (e) {
             loadError = e
@@ -35914,7 +35914,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = __nccwpck_require__(9815)
             } else {
-              nativeBinding = __nccwpck_require__(6991)
+              nativeBinding = __nccwpck_require__(5143)
             }
           } catch (e) {
             loadError = e
@@ -35922,17 +35922,32 @@ switch (platform) {
         }
         break
       case 'arm':
-        localFileExisted = existsSync(
-          join(__dirname, 'opendal.linux-arm-gnueabihf.node')
-        )
-        try {
-          if (localFileExisted) {
-            nativeBinding = __nccwpck_require__(502)
-          } else {
-            nativeBinding = __nccwpck_require__(7425)
+        if (isMusl()) {
+          localFileExisted = existsSync(
+            join(__dirname, 'opendal.linux-arm-musleabihf.node')
+          )
+          try {
+            if (localFileExisted) {
+              nativeBinding = __nccwpck_require__(5348)
+            } else {
+              nativeBinding = __nccwpck_require__(3279)
+            }
+          } catch (e) {
+            loadError = e
           }
-        } catch (e) {
-          loadError = e
+        } else {
+          localFileExisted = existsSync(
+            join(__dirname, 'opendal.linux-arm-gnueabihf.node')
+          )
+          try {
+            if (localFileExisted) {
+              nativeBinding = __nccwpck_require__(502)
+            } else {
+              nativeBinding = __nccwpck_require__(7425)
+            }
+          } catch (e) {
+            loadError = e
+          }
         }
         break
       case 'riscv64':
@@ -35962,6 +35977,20 @@ switch (platform) {
           } catch (e) {
             loadError = e
           }
+        }
+        break
+      case 's390x':
+        localFileExisted = existsSync(
+          join(__dirname, 'opendal.linux-s390x-gnu.node')
+        )
+        try {
+          if (localFileExisted) {
+            nativeBinding = __nccwpck_require__(5455)
+          } else {
+            nativeBinding = __nccwpck_require__(2459)
+          }
+        } catch (e) {
+          loadError = e
         }
         break
       default:
@@ -35997,7 +36026,7 @@ module.exports.RetryLayer = RetryLayer
 
 /***/ }),
 
-/***/ 6397:
+/***/ 4874:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /*
@@ -36121,7 +36150,7 @@ class BlockingWriteStream extends Writable {
   }
 }
 
-const { Operator, RetryLayer, BlockingReader, Reader, BlockingWriter, Writer } = __nccwpck_require__(1683)
+const { Operator, RetryLayer, BlockingReader, Reader, BlockingWriter, Writer } = __nccwpck_require__(9213)
 
 BlockingReader.prototype.createReadStream = function (options) {
   return new BlockingReadStream(this, options)
@@ -61846,7 +61875,7 @@ const utils = __importStar(__nccwpck_require__(9522));
 const tar_1 = __nccwpck_require__(3686);
 const core = __importStar(__nccwpck_require__(9093));
 const path = __importStar(__nccwpck_require__(1017));
-const opendal_1 = __nccwpck_require__(6397);
+const opendal_1 = __nccwpck_require__(4874);
 const state_1 = __nccwpck_require__(5753);
 const fs = __importStar(__nccwpck_require__(7147));
 const utils_1 = __nccwpck_require__(442);
@@ -62163,6 +62192,14 @@ module.exports = eval("require")("./opendal.linux-arm-gnueabihf.node");
 
 /***/ }),
 
+/***/ 5348:
+/***/ ((module) => {
+
+module.exports = eval("require")("./opendal.linux-arm-musleabihf.node");
+
+
+/***/ }),
+
 /***/ 9815:
 /***/ ((module) => {
 
@@ -62191,6 +62228,14 @@ module.exports = eval("require")("./opendal.linux-riscv64-gnu.node");
 /***/ ((module) => {
 
 module.exports = eval("require")("./opendal.linux-riscv64-musl.node");
+
+
+/***/ }),
+
+/***/ 5455:
+/***/ ((module) => {
+
+module.exports = eval("require")("./opendal.linux-s390x-gnu.node");
 
 
 /***/ }),
@@ -62275,6 +62320,14 @@ module.exports = eval("require")("@opendal/lib-linux-arm-gnueabihf");
 
 /***/ }),
 
+/***/ 3279:
+/***/ ((module) => {
+
+module.exports = eval("require")("@opendal/lib-linux-arm-musleabihf");
+
+
+/***/ }),
+
 /***/ 4129:
 /***/ ((module) => {
 
@@ -62295,6 +62348,14 @@ module.exports = eval("require")("@opendal/lib-linux-riscv64-gnu");
 /***/ ((module) => {
 
 module.exports = eval("require")("@opendal/lib-linux-riscv64-musl");
+
+
+/***/ }),
+
+/***/ 2459:
+/***/ ((module) => {
+
+module.exports = eval("require")("@opendal/lib-linux-s390x-gnu");
 
 
 /***/ }),

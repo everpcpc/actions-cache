@@ -15,23 +15,23 @@ importers:
         specifier: ^1.10.1
         version: 1.10.1
       '@opendal/lib-darwin-arm64':
-        specifier: ^0.45.1
-        version: 0.45.2
+        specifier: ^0.47.0
+        version: 0.47.0
       '@opendal/lib-darwin-x64':
-        specifier: ^0.45.1
-        version: 0.45.1
+        specifier: ^0.47.0
+        version: 0.47.0
       '@opendal/lib-linux-arm64-gnu':
-        specifier: ^0.45.1
-        version: 0.45.2
+        specifier: ^0.47.0
+        version: 0.47.0
       '@opendal/lib-linux-x64-gnu':
-        specifier: ^0.45.1
-        version: 0.45.2
+        specifier: ^0.47.0
+        version: 0.47.0
       '@opendal/lib-win32-x64-msvc':
-        specifier: ^0.45.1
-        version: 0.45.2
+        specifier: ^0.47.0
+        version: 0.47.0
       opendal:
-        specifier: ^0.45.1
-        version: 0.45.2
+        specifier: ^0.47.0
+        version: 0.47.0
     devDependencies:
       '@types/jest':
         specifier: ^29.5.12
@@ -391,44 +391,44 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@opendal/lib-darwin-arm64@0.45.2':
-    resolution: {integrity: sha512-aYiGPQSAbqNfIgmW3DLMnDySYhcaWNOub2gC5HyaBjh7EV8gKmSwYlDdESfbhSlxoUC6mTm9aOy9zJs3Lf4tVg==}
+  '@opendal/lib-darwin-arm64@0.47.0':
+    resolution: {integrity: sha512-4gtBHmvOcPhIjdkb+yE2EqsN7otgAdef1OHC4v4mad2DhkHPgt/llkrRqsu3RoPIfvGq0+jBJKK2pYsMY1aBig==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@opendal/lib-darwin-x64@0.45.1':
-    resolution: {integrity: sha512-E2mcpaapJcUzlR6AJ0QVqP4HVctj4BY49VAAmHdmTWg0PYXZ6EGePG5EjfwdSB0BjRxztuiDLsu32yvR4Yn40Q==}
+  '@opendal/lib-darwin-x64@0.47.0':
+    resolution: {integrity: sha512-swW+lGPzrdzaJTyI+t57wh9Or5HgI6Q4czKD4hqJ1ADlHC2IXa1ORFWr2rHC/l1Hqwr7CFXP3Q66C6vYUzsFxw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@opendal/lib-linux-arm64-gnu@0.45.2':
-    resolution: {integrity: sha512-JrtXICywnwwy+VraY0pMzLyYgebXVe8E3GGZQ72j0xemiXXOQ8IzTovlTfVo/qsl+eU077EKNv+HYGD981niyQ==}
+  '@opendal/lib-linux-arm64-gnu@0.47.0':
+    resolution: {integrity: sha512-2SQOO+2CZ8YYsJCbGFhn27yxwhUkUDAOpQ8G8PeEVCAEUCzCG/Ho1wRkZ5K+U9GJXETa3f2fTcmMqdhM07hFbg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@opendal/lib-linux-arm64-musl@0.45.2':
-    resolution: {integrity: sha512-5uvNQOy4PZTFmGr+vPr/HapLftOEsfS3YtG8YfeD2ZQTu/eKaOqUYlclD96PvAdwb7SoPRQ/oW+DfdD1NctBmA==}
+  '@opendal/lib-linux-arm64-musl@0.47.0':
+    resolution: {integrity: sha512-TCK8pp/n1bmuT6R809pRajtCP+4vzxhfV/9qkWmE2gWCf3wTLc0mM+ndxiwUcRDhy9vWEpK1YibcU//WR/w8nQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@opendal/lib-linux-x64-gnu@0.45.2':
-    resolution: {integrity: sha512-dF0iFCIkGTgqqaB8+s2owtyRrSAcYuweZ0lu4rQ02qR4RvVz13v79s9ZElJPDaAtPQqh4RG6duUxJBURYHQmfA==}
+  '@opendal/lib-linux-x64-gnu@0.47.0':
+    resolution: {integrity: sha512-Sx8K3arLkN6hj26vuB1m7Fk63jndOFJ6yGR41vfjPVucTEmR8fM+auaWWCxGpKzqrREKxQJhAnbuMxFPoyR72Q==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@opendal/lib-win32-arm64-msvc@0.45.2':
-    resolution: {integrity: sha512-88jImCBgO6l4WC6teG2X7zpCk5t+19bBl9bmN5uayfGTKMA67q8BrlHeGpIIzNEMejApy6uafZfKlYYrXinXmg==}
+  '@opendal/lib-win32-arm64-msvc@0.47.0':
+    resolution: {integrity: sha512-ZFfCVTDCyVAmLJ3ORaJ8dL31zdZ0IXVhhKkTAoopy9gnBpSu1NeCWC46U6E+0FPqWw/01oAaz3PouPEpVk1McA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@opendal/lib-win32-x64-msvc@0.45.2':
-    resolution: {integrity: sha512-76lZwMIm6auc2aPJaQ//ML/K0a/Uo0N0vlZte4ohQr5dyZVj9+tyJYviilh0Z+quInZvILJKbF0XFCK0+sV8Ig==}
+  '@opendal/lib-win32-x64-msvc@0.47.0':
+    resolution: {integrity: sha512-VcnXDYFpjB7DaCyfwHie252IwJtQhcl7imMrvbFFMcEsbzGS3Qp8c6jVEWmut4O9Fc4B3hO6JJHCea1qs0bXvQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -1123,8 +1123,8 @@ packages:
     resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
     engines: {node: '>=6'}
 
-  opendal@0.45.2:
-    resolution: {integrity: sha512-W5JnwVn497mGEE/BULsXGhWNLb/oBCg4x5A2LM/phoQ5VpLdpc+jdToaDtSEgJxbM6d7XxG5g/wv5vRR44UoOQ==}
+  opendal@0.47.0:
+    resolution: {integrity: sha512-I169UePKMYBMVg8ZSjvnhw43HCYsL0Otu71AU/KwF8CjokSpyTxGiVKza6WoI67bsd6gMXkcMPP6+xjZ6knUVw==}
     engines: {node: '>= 10'}
 
   p-limit@2.3.0:
@@ -1990,21 +1990,21 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@opendal/lib-darwin-arm64@0.45.2': {}
+  '@opendal/lib-darwin-arm64@0.47.0': {}
 
-  '@opendal/lib-darwin-x64@0.45.1': {}
+  '@opendal/lib-darwin-x64@0.47.0': {}
 
-  '@opendal/lib-linux-arm64-gnu@0.45.2': {}
+  '@opendal/lib-linux-arm64-gnu@0.47.0': {}
 
-  '@opendal/lib-linux-arm64-musl@0.45.2':
+  '@opendal/lib-linux-arm64-musl@0.47.0':
     optional: true
 
-  '@opendal/lib-linux-x64-gnu@0.45.2': {}
+  '@opendal/lib-linux-x64-gnu@0.47.0': {}
 
-  '@opendal/lib-win32-arm64-msvc@0.45.2':
+  '@opendal/lib-win32-arm64-msvc@0.47.0':
     optional: true
 
-  '@opendal/lib-win32-x64-msvc@0.45.2': {}
+  '@opendal/lib-win32-x64-msvc@0.47.0': {}
 
   '@sinclair/typebox@0.27.8': {}
 
@@ -2863,14 +2863,15 @@ snapshots:
     dependencies:
       mimic-fn: 2.1.0
 
-  opendal@0.45.2:
+  opendal@0.47.0:
     optionalDependencies:
-      '@opendal/lib-darwin-arm64': 0.45.2
-      '@opendal/lib-linux-arm64-gnu': 0.45.2
-      '@opendal/lib-linux-arm64-musl': 0.45.2
-      '@opendal/lib-linux-x64-gnu': 0.45.2
-      '@opendal/lib-win32-arm64-msvc': 0.45.2
-      '@opendal/lib-win32-x64-msvc': 0.45.2
+      '@opendal/lib-darwin-arm64': 0.47.0
+      '@opendal/lib-darwin-x64': 0.47.0
+      '@opendal/lib-linux-arm64-gnu': 0.47.0
+      '@opendal/lib-linux-arm64-musl': 0.47.0
+      '@opendal/lib-linux-x64-gnu': 0.47.0
+      '@opendal/lib-win32-arm64-msvc': 0.47.0
+      '@opendal/lib-win32-x64-msvc': 0.47.0
 
   p-limit@2.3.0:
     dependencies:
