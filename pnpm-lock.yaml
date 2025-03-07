@@ -9,53 +9,53 @@ importers:
   .:
     dependencies:
       '@actions/cache':
-        specifier: ^3.2.4
-        version: 3.2.4
+        specifier: ^4.0.2
+        version: 4.0.2
       '@actions/core':
-        specifier: ^1.10.1
-        version: 1.10.1
+        specifier: ^1.11.1
+        version: 1.11.1
       '@opendal/lib-darwin-arm64':
-        specifier: ^0.47.0
-        version: 0.47.0
+        specifier: ^0.47.11
+        version: 0.47.11
       '@opendal/lib-darwin-x64':
-        specifier: ^0.47.0
-        version: 0.47.0
+        specifier: ^0.47.11
+        version: 0.47.11
       '@opendal/lib-linux-arm64-gnu':
-        specifier: ^0.47.0
-        version: 0.47.0
+        specifier: ^0.47.11
+        version: 0.47.11
       '@opendal/lib-linux-x64-gnu':
-        specifier: ^0.47.0
-        version: 0.47.0
+        specifier: ^0.47.11
+        version: 0.47.11
       '@opendal/lib-win32-x64-msvc':
-        specifier: ^0.47.0
-        version: 0.47.0
+        specifier: ^0.47.11
+        version: 0.47.11
       opendal:
-        specifier: ^0.47.0
-        version: 0.47.0
+        specifier: ^0.47.11
+        version: 0.47.11
     devDependencies:
       '@types/jest':
-        specifier: ^29.5.12
-        version: 29.5.12
+        specifier: ^29.5.14
+        version: 29.5.14
       '@vercel/ncc':
-        specifier: ^0.38.1
-        version: 0.38.1
+        specifier: ^0.38.3
+        version: 0.38.3
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.14.2)
       ts-jest:
-        specifier: ^29.1.4
-        version: 29.1.4(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(jest@29.7.0(@types/node@20.14.2))(typescript@5.4.5)
+        specifier: ^29.2.6
+        version: 29.2.6(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(jest@29.7.0(@types/node@20.14.2))(typescript@5.8.2)
       typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
+        specifier: ^5.8.2
+        version: 5.8.2
 
 packages:
 
-  '@actions/cache@3.2.4':
-    resolution: {integrity: sha512-RuHnwfcDagtX+37s0ZWy7clbOfnZ7AlDJQ7k/9rzt2W4Gnwde3fa/qjSjVuz4vLcLIpc7fUob27CMrqiWZytYA==}
+  '@actions/cache@4.0.2':
+    resolution: {integrity: sha512-cBr7JL1q+JKjbBd3w3SZN5OQ1Xg+/D8QLMcE7MpgpghZlL4biBO0ZEeraoTxCZyfN0YY0dxXlLgsgGv/sT5BTg==}
 
-  '@actions/core@1.10.1':
-    resolution: {integrity: sha512-3lBR9EDAY+iYIpTnTIXmWcNbX3T2kCkAEQGIQx4NVQ0575nk2k3GRZDTPQG+vVtS2izSLmINlxXf0uLtnrTP+g==}
+  '@actions/core@1.11.1':
+    resolution: {integrity: sha512-hXJCSrkwfA46Vd9Z3q4cpEpHB1rL5NG04+/rbqW9d3+CSvtB1tYe8UTpAlixa1vj0m/ULglfEK2UKxMGxCxv5A==}
 
   '@actions/exec@1.1.1':
     resolution: {integrity: sha512-+sCcHHbVdk93a0XT19ECtO/gIXoxvdsgQLzb2fE2/5sIZmWQuluYyjPQtrtTHdU1YzTZ7bAPN4sITq2xi1679w==}
@@ -391,47 +391,64 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@opendal/lib-darwin-arm64@0.47.0':
-    resolution: {integrity: sha512-4gtBHmvOcPhIjdkb+yE2EqsN7otgAdef1OHC4v4mad2DhkHPgt/llkrRqsu3RoPIfvGq0+jBJKK2pYsMY1aBig==}
+  '@opendal/lib-darwin-arm64@0.47.11':
+    resolution: {integrity: sha512-REgIIYN4Ew6ZyDvWYwlCptIhrazq4oQba/crGL6spxuns9U39taJBSy5DYkU6xmry+mfMuuU1nA2X6YRwXSAZw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@opendal/lib-darwin-x64@0.47.0':
-    resolution: {integrity: sha512-swW+lGPzrdzaJTyI+t57wh9Or5HgI6Q4czKD4hqJ1ADlHC2IXa1ORFWr2rHC/l1Hqwr7CFXP3Q66C6vYUzsFxw==}
+  '@opendal/lib-darwin-x64@0.47.11':
+    resolution: {integrity: sha512-dzbhJk2X2IOSAL1juYTE7HpOWbTTcJFUsgqFneZ2Abs0FGP8Q574p7Dnm4w96Cnx7YFosul8HUdwoZ6hI0INNw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@opendal/lib-linux-arm64-gnu@0.47.0':
-    resolution: {integrity: sha512-2SQOO+2CZ8YYsJCbGFhn27yxwhUkUDAOpQ8G8PeEVCAEUCzCG/Ho1wRkZ5K+U9GJXETa3f2fTcmMqdhM07hFbg==}
+  '@opendal/lib-linux-arm64-gnu@0.47.11':
+    resolution: {integrity: sha512-7HTjdsfyysxA+qjRRAheAwX7mfk0sVhbHw72W7/eGCmq3zhQdugSCZSumbrLIIUrlZvxhCQH9WVlbZ3j1CVlNw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@opendal/lib-linux-arm64-musl@0.47.0':
-    resolution: {integrity: sha512-TCK8pp/n1bmuT6R809pRajtCP+4vzxhfV/9qkWmE2gWCf3wTLc0mM+ndxiwUcRDhy9vWEpK1YibcU//WR/w8nQ==}
+  '@opendal/lib-linux-arm64-musl@0.47.11':
+    resolution: {integrity: sha512-kDStQUALghrvKsFkSColy5agi1WDl0vz827F5pq90DwEw+PopNnRSA5U0EEF4+Vxm+Z4kPQlMo3ucpszNUlWnQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@opendal/lib-linux-x64-gnu@0.47.0':
-    resolution: {integrity: sha512-Sx8K3arLkN6hj26vuB1m7Fk63jndOFJ6yGR41vfjPVucTEmR8fM+auaWWCxGpKzqrREKxQJhAnbuMxFPoyR72Q==}
+  '@opendal/lib-linux-x64-gnu@0.47.11':
+    resolution: {integrity: sha512-wKFjxj90UUGIkRod8FOHjIsTc2ZshetDkctLQrjWSruYdYk3ZNNfSIU/l1mOFCsSR0ZG4BflHRoTjJbSu+L20A==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@opendal/lib-win32-arm64-msvc@0.47.0':
-    resolution: {integrity: sha512-ZFfCVTDCyVAmLJ3ORaJ8dL31zdZ0IXVhhKkTAoopy9gnBpSu1NeCWC46U6E+0FPqWw/01oAaz3PouPEpVk1McA==}
+  '@opendal/lib-win32-arm64-msvc@0.47.11':
+    resolution: {integrity: sha512-IS2BxxzBoxv7W1cYJlr6z3VsrajvEAUYOpnvDEJKHtEKfCnhWg+fI00WO8UH9JJBBoN3AaH5isMWx6j0Q/Mzgg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@opendal/lib-win32-x64-msvc@0.47.0':
-    resolution: {integrity: sha512-VcnXDYFpjB7DaCyfwHie252IwJtQhcl7imMrvbFFMcEsbzGS3Qp8c6jVEWmut4O9Fc4B3hO6JJHCea1qs0bXvQ==}
+  '@opendal/lib-win32-x64-msvc@0.47.11':
+    resolution: {integrity: sha512-30ReI56qlkL80C/09iRuLAahJkGnRqacWrk0VyzCc7f0RYoHPl2/uSMweNi9zER1lIK1+X1IKTncc/OGnZcxKw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
+
+  '@protobuf-ts/plugin-framework@2.9.4':
+    resolution: {integrity: sha512-9nuX1kjdMliv+Pes8dQCKyVhjKgNNfwxVHg+tx3fLXSfZZRcUHMc1PMwB9/vTvc6gBKt9QGz5ERqSqZc0++E9A==}
+
+  '@protobuf-ts/plugin@2.9.4':
+    resolution: {integrity: sha512-Db5Laq5T3mc6ERZvhIhkj1rn57/p8gbWiCKxQWbZBBl20wMuqKoHbRw4tuD7FyXi+IkwTToaNVXymv5CY3E8Rw==}
+    hasBin: true
+
+  '@protobuf-ts/protoc@2.9.4':
+    resolution: {integrity: sha512-hQX+nOhFtrA+YdAXsXEDrLoGJqXHpgv4+BueYF0S9hy/Jq0VRTVlJS1Etmf4qlMt/WdigEes5LOd/LDzui4GIQ==}
+    hasBin: true
+
+  '@protobuf-ts/runtime-rpc@2.9.4':
+    resolution: {integrity: sha512-y9L9JgnZxXFqH5vD4d7j9duWvIJ7AShyBRoNKJGhu9Q27qIbchfzli66H9RvrQNIFk5ER7z1Twe059WZGqERcA==}
+
+  '@protobuf-ts/runtime@2.9.4':
+    resolution: {integrity: sha512-vHRFWtJJB/SiogWDF0ypoKfRIZ41Kq+G9cEFj6Qm1eQaAhJ1LDFvgZ7Ja4tb3iLOQhz0PaoPnnOijF1qmEqTxg==}
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -466,8 +483,8 @@ packages:
   '@types/istanbul-reports@3.0.4':
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
 
-  '@types/jest@29.5.12':
-    resolution: {integrity: sha512-eDC8bTvT/QhYdxJAulQikueigY5AsdBRH2yDKW3yveW7svY3+DzN84/2NUgkw10RTiJbWqZrTtoGVdYlvFJdLw==}
+  '@types/jest@29.5.14':
+    resolution: {integrity: sha512-ZN+4sdnLUbo8EVvVc2ao0GFW6oVrQRPn4K2lglySj7APvSrgzxHiNNK99us4WDMi57xxA2yggblIAMNhXOotLQ==}
 
   '@types/node@20.14.2':
     resolution: {integrity: sha512-xyu6WAMVwv6AKFLB+e/7ySZVr/0zLCzOa7rSpq6jNwpqOrUbcACDWC+53d4n2QHOnDou0fbIsg8wZu/sxrnI4Q==}
@@ -481,8 +498,8 @@ packages:
   '@types/yargs@17.0.32':
     resolution: {integrity: sha512-xQ67Yc/laOG5uMfX/093MRlGGCIBzZMarVa+gfNKJxWAIgykYpVGkBdbqEzGDDfCrVUj6Hiff4mTZ5BA6TmAog==}
 
-  '@vercel/ncc@0.38.1':
-    resolution: {integrity: sha512-IBBb+iI2NLu4VQn3Vwldyi2QwaXt5+hTyh58ggAMoCGE6DJmPvwL3KPBWcJl1m9LYPChBLE980Jw+CS4Wokqxw==}
+  '@vercel/ncc@0.38.3':
+    resolution: {integrity: sha512-rnK6hJBS6mwc+Bkab+PGPs9OiS0i/3kdTO+CkI8V0/VrW3vmz7O2Pxjw/owOlmo6PKEIxRSeZKv/kuL9itnpYA==}
     hasBin: true
 
   abort-controller@3.0.0:
@@ -520,6 +537,9 @@ packages:
   argparse@1.0.10:
     resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
 
+  async@3.2.6:
+    resolution: {integrity: sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==}
+
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
@@ -553,6 +573,9 @@ packages:
 
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
+
+  brace-expansion@2.0.1:
+    resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
 
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
@@ -683,6 +706,11 @@ packages:
     resolution: {integrity: sha512-EjePK1srD3P08o2j4f0ExnylqRs5B9tJjcp9t1krH2qRi8CCdsYfwe9JgSLurFBWwq4uOlipzfk5fHNvwFKr8Q==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
+  ejs@3.1.10:
+    resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
+    engines: {node: '>=0.10.0'}
+    hasBin: true
+
   electron-to-chromium@1.4.794:
     resolution: {integrity: sha512-6FApLtsYhDCY0Vglq3AptsdxQ+PJLc6AxlAM0HjEihUAiOPPbkASEsq9gtxUeZY9o0sJIEa3WnF0vVH4VT4iug==}
 
@@ -742,6 +770,9 @@ packages:
 
   fb-watchman@2.0.2:
     resolution: {integrity: sha512-p5161BqbuCaSnB8jIbzQHOlpgsPmK5rJVDfDKO91Axs5NC1uu3HRQm6wt9cd9/+GtQQIO53JdGXXoyDpTAsgYA==}
+
+  filelist@1.0.4:
+    resolution: {integrity: sha512-w1cEuf3S+DrLCQL7ET6kz+gmlJdbq9J7yXCSjK/OZCPA+qEN1WyF4ZAf0YYJa4/shHJra2t/d/r8SV4Ji+x+8Q==}
 
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
@@ -884,6 +915,11 @@ packages:
   istanbul-reports@3.1.7:
     resolution: {integrity: sha512-BewmUXImeuRk2YY0PVbxgKAysvhRPUQE0h5QRM++nVWyubKGV0l8qQ5op8+B2DOmwSe63Jivj0BjkPQVf8fP5g==}
     engines: {node: '>=8'}
+
+  jake@10.9.2:
+    resolution: {integrity: sha512-2P4SQ0HrLQ+fw6llpLnOaGAvN2Zu6778SJMrCUwns4fOoG9ayrTiZk3VV8sCPkVZF8ab0zksVpS8FDY5pRCNBA==}
+    engines: {node: '>=10'}
+    hasBin: true
 
   jest-changed-files@29.7.0:
     resolution: {integrity: sha512-fEArFiwf1BpQ+4bXSprcDc3/x4HSzL4al2tozwVpDFpsxALjLYdyiIK4e5Vz66GQJIbXJ82+35PtysofptNX2w==}
@@ -1087,6 +1123,10 @@ packages:
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
+  minimatch@5.1.6:
+    resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
+    engines: {node: '>=10'}
+
   ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
@@ -1123,8 +1163,8 @@ packages:
     resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
     engines: {node: '>=6'}
 
-  opendal@0.47.0:
-    resolution: {integrity: sha512-I169UePKMYBMVg8ZSjvnhw43HCYsL0Otu71AU/KwF8CjokSpyTxGiVKza6WoI67bsd6gMXkcMPP6+xjZ6knUVw==}
+  opendal@0.47.11:
+    resolution: {integrity: sha512-w7sneGk/xvSEiDtSv3ZQH3NoT48XRB3YIgWvF4m9fS5Acs6RCpYd6Tjl2s6Hcb7kPy1Wp99dJr7o5VJDJAow/g==}
     engines: {node: '>= 10'}
 
   p-limit@2.3.0:
@@ -1223,6 +1263,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.7.1:
+    resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
     engines: {node: '>=8'}
@@ -1316,8 +1361,8 @@ packages:
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
 
-  ts-jest@29.1.4:
-    resolution: {integrity: sha512-YiHwDhSvCiItoAgsKtoLFCuakDzDsJ1DLDnSouTaTmdOcOwIkSzbLXduaQ6M5DRVhuZC/NYaaZ/mtHbWMv/S6Q==}
+  ts-jest@29.2.6:
+    resolution: {integrity: sha512-yTNZVZqc8lSixm+QGVFcPe6+yj7+TWZwIesuOWvfcn4B9bz5x4NDzVCQQjOs7Hfouu36aEqfEbo9Qpo+gq8dDg==}
     engines: {node: ^14.15.0 || ^16.10.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -1358,8 +1403,13 @@ packages:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
 
-  typescript@5.4.5:
-    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+  typescript@3.9.10:
+    resolution: {integrity: sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+
+  typescript@5.8.2:
+    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1375,11 +1425,6 @@ packages:
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
-
-  uuid@3.4.0:
-    resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
-    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-    hasBin: true
 
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
@@ -1443,9 +1488,9 @@ packages:
 
 snapshots:
 
-  '@actions/cache@3.2.4':
+  '@actions/cache@4.0.2':
     dependencies:
-      '@actions/core': 1.10.1
+      '@actions/core': 1.11.1
       '@actions/exec': 1.1.1
       '@actions/glob': 0.1.2
       '@actions/http-client': 2.2.1
@@ -1453,16 +1498,16 @@ snapshots:
       '@azure/abort-controller': 1.1.0
       '@azure/ms-rest-js': 2.7.0
       '@azure/storage-blob': 12.23.0
+      '@protobuf-ts/plugin': 2.9.4
       semver: 6.3.1
-      uuid: 3.4.0
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@actions/core@1.10.1':
+  '@actions/core@1.11.1':
     dependencies:
+      '@actions/exec': 1.1.1
       '@actions/http-client': 2.2.1
-      uuid: 8.3.2
 
   '@actions/exec@1.1.1':
     dependencies:
@@ -1470,7 +1515,7 @@ snapshots:
 
   '@actions/glob@0.1.2':
     dependencies:
-      '@actions/core': 1.10.1
+      '@actions/core': 1.11.1
       minimatch: 3.1.2
 
   '@actions/http-client@2.2.1':
@@ -1990,21 +2035,42 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@opendal/lib-darwin-arm64@0.47.0': {}
+  '@opendal/lib-darwin-arm64@0.47.11': {}
 
-  '@opendal/lib-darwin-x64@0.47.0': {}
+  '@opendal/lib-darwin-x64@0.47.11': {}
 
-  '@opendal/lib-linux-arm64-gnu@0.47.0': {}
+  '@opendal/lib-linux-arm64-gnu@0.47.11': {}
 
-  '@opendal/lib-linux-arm64-musl@0.47.0':
+  '@opendal/lib-linux-arm64-musl@0.47.11':
     optional: true
 
-  '@opendal/lib-linux-x64-gnu@0.47.0': {}
+  '@opendal/lib-linux-x64-gnu@0.47.11': {}
 
-  '@opendal/lib-win32-arm64-msvc@0.47.0':
+  '@opendal/lib-win32-arm64-msvc@0.47.11':
     optional: true
 
-  '@opendal/lib-win32-x64-msvc@0.47.0': {}
+  '@opendal/lib-win32-x64-msvc@0.47.11': {}
+
+  '@protobuf-ts/plugin-framework@2.9.4':
+    dependencies:
+      '@protobuf-ts/runtime': 2.9.4
+      typescript: 3.9.10
+
+  '@protobuf-ts/plugin@2.9.4':
+    dependencies:
+      '@protobuf-ts/plugin-framework': 2.9.4
+      '@protobuf-ts/protoc': 2.9.4
+      '@protobuf-ts/runtime': 2.9.4
+      '@protobuf-ts/runtime-rpc': 2.9.4
+      typescript: 3.9.10
+
+  '@protobuf-ts/protoc@2.9.4': {}
+
+  '@protobuf-ts/runtime-rpc@2.9.4':
+    dependencies:
+      '@protobuf-ts/runtime': 2.9.4
+
+  '@protobuf-ts/runtime@2.9.4': {}
 
   '@sinclair/typebox@0.27.8': {}
 
@@ -2051,7 +2117,7 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
 
-  '@types/jest@29.5.12':
+  '@types/jest@29.5.14':
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
@@ -2068,7 +2134,7 @@ snapshots:
     dependencies:
       '@types/yargs-parser': 21.0.3
 
-  '@vercel/ncc@0.38.1': {}
+  '@vercel/ncc@0.38.3': {}
 
   abort-controller@3.0.0:
     dependencies:
@@ -2104,6 +2170,8 @@ snapshots:
   argparse@1.0.10:
     dependencies:
       sprintf-js: 1.0.3
+
+  async@3.2.6: {}
 
   asynckit@0.4.0: {}
 
@@ -2165,6 +2233,10 @@ snapshots:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
+
+  brace-expansion@2.0.1:
+    dependencies:
+      balanced-match: 1.0.2
 
   braces@3.0.3:
     dependencies:
@@ -2277,6 +2349,10 @@ snapshots:
 
   diff-sequences@29.6.3: {}
 
+  ejs@3.1.10:
+    dependencies:
+      jake: 10.9.2
+
   electron-to-chromium@1.4.794: {}
 
   emittery@0.13.1: {}
@@ -2330,6 +2406,10 @@ snapshots:
   fb-watchman@2.0.2:
     dependencies:
       bser: 2.1.1
+
+  filelist@1.0.4:
+    dependencies:
+      minimatch: 5.1.6
 
   fill-range@7.1.1:
     dependencies:
@@ -2470,6 +2550,13 @@ snapshots:
     dependencies:
       html-escaper: 2.0.2
       istanbul-lib-report: 3.0.1
+
+  jake@10.9.2:
+    dependencies:
+      async: 3.2.6
+      chalk: 4.1.2
+      filelist: 1.0.4
+      minimatch: 3.1.2
 
   jest-changed-files@29.7.0:
     dependencies:
@@ -2837,6 +2924,10 @@ snapshots:
     dependencies:
       brace-expansion: 1.1.11
 
+  minimatch@5.1.6:
+    dependencies:
+      brace-expansion: 2.0.1
+
   ms@2.1.2: {}
 
   natural-compare@1.4.0: {}
@@ -2863,15 +2954,15 @@ snapshots:
     dependencies:
       mimic-fn: 2.1.0
 
-  opendal@0.47.0:
+  opendal@0.47.11:
     optionalDependencies:
-      '@opendal/lib-darwin-arm64': 0.47.0
-      '@opendal/lib-darwin-x64': 0.47.0
-      '@opendal/lib-linux-arm64-gnu': 0.47.0
-      '@opendal/lib-linux-arm64-musl': 0.47.0
-      '@opendal/lib-linux-x64-gnu': 0.47.0
-      '@opendal/lib-win32-arm64-msvc': 0.47.0
-      '@opendal/lib-win32-x64-msvc': 0.47.0
+      '@opendal/lib-darwin-arm64': 0.47.11
+      '@opendal/lib-darwin-x64': 0.47.11
+      '@opendal/lib-linux-arm64-gnu': 0.47.11
+      '@opendal/lib-linux-arm64-musl': 0.47.11
+      '@opendal/lib-linux-x64-gnu': 0.47.11
+      '@opendal/lib-win32-arm64-msvc': 0.47.11
+      '@opendal/lib-win32-x64-msvc': 0.47.11
 
   p-limit@2.3.0:
     dependencies:
@@ -2948,6 +3039,8 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.6.2: {}
+
+  semver@7.7.1: {}
 
   shebang-command@2.0.0:
     dependencies:
@@ -3027,17 +3120,18 @@ snapshots:
 
   tr46@0.0.3: {}
 
-  ts-jest@29.1.4(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(jest@29.7.0(@types/node@20.14.2))(typescript@5.4.5):
+  ts-jest@29.2.6(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(jest@29.7.0(@types/node@20.14.2))(typescript@5.8.2):
     dependencies:
       bs-logger: 0.2.6
+      ejs: 3.1.10
       fast-json-stable-stringify: 2.1.0
       jest: 29.7.0(@types/node@20.14.2)
       jest-util: 29.7.0
       json5: 2.2.3
       lodash.memoize: 4.1.2
       make-error: 1.3.6
-      semver: 7.6.2
-      typescript: 5.4.5
+      semver: 7.7.1
+      typescript: 5.8.2
       yargs-parser: 21.1.1
     optionalDependencies:
       '@babel/core': 7.24.7
@@ -3055,7 +3149,9 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  typescript@5.4.5: {}
+  typescript@3.9.10: {}
+
+  typescript@5.8.2: {}
 
   undici-types@5.26.5: {}
 
@@ -3068,8 +3164,6 @@ snapshots:
       browserslist: 4.23.0
       escalade: 3.1.2
       picocolors: 1.0.1
-
-  uuid@3.4.0: {}
 
   uuid@8.3.2: {}
 
