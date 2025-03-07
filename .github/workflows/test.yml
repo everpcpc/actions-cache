@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
-      - run: corepack enable
+      - run: npm i -g --force corepack && corepack enable
       - run: pnpm install --frozen-lockfile
       - name: Ensure dist/ folder is up-to-date
         run: |
