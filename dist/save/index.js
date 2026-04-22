@@ -27094,7 +27094,7 @@ var require_generated = __commonJS({
       } else if (process.platform === "android") {
         if (process.arch === "arm64") {
           try {
-            return require("./opendal.android-arm64.node");
+            return require("../opendal.android-arm64.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27110,7 +27110,7 @@ var require_generated = __commonJS({
           }
         } else if (process.arch === "arm") {
           try {
-            return require("./opendal.android-arm-eabi.node");
+            return require("../opendal.android-arm-eabi.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27130,7 +27130,7 @@ var require_generated = __commonJS({
       } else if (process.platform === "win32") {
         if (process.arch === "x64") {
           try {
-            return require("./opendal.win32-x64-msvc.node");
+            return require("../opendal.win32-x64-msvc.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27146,7 +27146,7 @@ var require_generated = __commonJS({
           }
         } else if (process.arch === "ia32") {
           try {
-            return require("./opendal.win32-ia32-msvc.node");
+            return require("../opendal.win32-ia32-msvc.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27162,7 +27162,7 @@ var require_generated = __commonJS({
           }
         } else if (process.arch === "arm64") {
           try {
-            return require("./opendal.win32-arm64-msvc.node");
+            return require("../opendal.win32-arm64-msvc.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27181,7 +27181,7 @@ var require_generated = __commonJS({
         }
       } else if (process.platform === "darwin") {
         try {
-          return require("./opendal.darwin-universal.node");
+          return require("../opendal.darwin-universal.node");
         } catch (e) {
           loadErrors.push(e);
         }
@@ -27197,7 +27197,7 @@ var require_generated = __commonJS({
         }
         if (process.arch === "x64") {
           try {
-            return require("./opendal.darwin-x64.node");
+            return require("../opendal.darwin-x64.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27213,7 +27213,7 @@ var require_generated = __commonJS({
           }
         } else if (process.arch === "arm64") {
           try {
-            return require("./opendal.darwin-arm64.node");
+            return require("../opendal.darwin-arm64.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27233,7 +27233,7 @@ var require_generated = __commonJS({
       } else if (process.platform === "freebsd") {
         if (process.arch === "x64") {
           try {
-            return require("./opendal.freebsd-x64.node");
+            return require("../opendal.freebsd-x64.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27249,7 +27249,7 @@ var require_generated = __commonJS({
           }
         } else if (process.arch === "arm64") {
           try {
-            return require("./opendal.freebsd-arm64.node");
+            return require("../opendal.freebsd-arm64.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27270,7 +27270,7 @@ var require_generated = __commonJS({
         if (process.arch === "x64") {
           if (isMusl()) {
             try {
-              return require("./opendal.linux-x64-musl.node");
+              return require("../opendal.linux-x64-musl.node");
             } catch (e) {
               loadErrors.push(e);
             }
@@ -27286,7 +27286,7 @@ var require_generated = __commonJS({
             }
           } else {
             try {
-              return require("./opendal.linux-x64-gnu.node");
+              return require("../opendal.linux-x64-gnu.node");
             } catch (e) {
               loadErrors.push(e);
             }
@@ -27304,7 +27304,7 @@ var require_generated = __commonJS({
         } else if (process.arch === "arm64") {
           if (isMusl()) {
             try {
-              return require("./opendal.linux-arm64-musl.node");
+              return require("../opendal.linux-arm64-musl.node");
             } catch (e) {
               loadErrors.push(e);
             }
@@ -27320,7 +27320,7 @@ var require_generated = __commonJS({
             }
           } else {
             try {
-              return require("./opendal.linux-arm64-gnu.node");
+              return require("../opendal.linux-arm64-gnu.node");
             } catch (e) {
               loadErrors.push(e);
             }
@@ -27338,7 +27338,7 @@ var require_generated = __commonJS({
         } else if (process.arch === "arm") {
           if (isMusl()) {
             try {
-              return require("./opendal.linux-arm-musleabihf.node");
+              return require("../opendal.linux-arm-musleabihf.node");
             } catch (e) {
               loadErrors.push(e);
             }
@@ -27354,7 +27354,7 @@ var require_generated = __commonJS({
             }
           } else {
             try {
-              return require("./opendal.linux-arm-gnueabihf.node");
+              return require("../opendal.linux-arm-gnueabihf.node");
             } catch (e) {
               loadErrors.push(e);
             }
@@ -27372,7 +27372,7 @@ var require_generated = __commonJS({
         } else if (process.arch === "riscv64") {
           if (isMusl()) {
             try {
-              return require("./opendal.linux-riscv64-musl.node");
+              return require("../opendal.linux-riscv64-musl.node");
             } catch (e) {
               loadErrors.push(e);
             }
@@ -27388,7 +27388,7 @@ var require_generated = __commonJS({
             }
           } else {
             try {
-              return require("./opendal.linux-riscv64-gnu.node");
+              return require("../opendal.linux-riscv64-gnu.node");
             } catch (e) {
               loadErrors.push(e);
             }
@@ -27405,7 +27405,7 @@ var require_generated = __commonJS({
           }
         } else if (process.arch === "ppc64") {
           try {
-            return require("./opendal.linux-ppc64-gnu.node");
+            return require("../opendal.linux-ppc64-gnu.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27421,7 +27421,7 @@ var require_generated = __commonJS({
           }
         } else if (process.arch === "s390x") {
           try {
-            return require("./opendal.linux-s390x-gnu.node");
+            return require("../opendal.linux-s390x-gnu.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27441,7 +27441,7 @@ var require_generated = __commonJS({
       } else if (process.platform === "openharmony") {
         if (process.arch === "arm64") {
           try {
-            return require("./opendal.openharmony-arm64.node");
+            return require("../opendal.openharmony-arm64.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27457,7 +27457,7 @@ var require_generated = __commonJS({
           }
         } else if (process.arch === "x64") {
           try {
-            return require("./opendal.openharmony-x64.node");
+            return require("../opendal.openharmony-x64.node");
           } catch (e) {
             loadErrors.push(e);
           }
@@ -27473,7 +27473,7 @@ var require_generated = __commonJS({
           }
         } else if (process.arch === "arm") {
           try {
-            return require("./opendal.openharmony-arm.node");
+            return require("../opendal.openharmony-arm.node");
           } catch (e) {
             loadErrors.push(e);
           }

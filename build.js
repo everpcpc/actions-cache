@@ -6,7 +6,8 @@ const nativeNodePlugin = {
   name: "native-node",
   setup(build) {
     build.onResolve({ filter: /\.node$/ }, (args) => {
-      return { path: args.path, external: true };
+      const name = path.basename(args.path);
+      return { path: "../" + name, external: true };
     });
     build.onResolve({ filter: /^@opendal\/lib-/ }, (args) => {
       return { path: args.path, external: true };
@@ -23,6 +24,7 @@ const platforms = [
 ];
 
 function copyNativeFiles(outdir) {
+  fs.mkdirSync(outdir, { recursive: true });
   for (const platform of platforms) {
     const pkgDir = path.join(
       __dirname,
@@ -59,8 +61,7 @@ async function build() {
     outfile: "dist/save/index.js",
   });
 
-  copyNativeFiles("dist/restore");
-  copyNativeFiles("dist/save");
+  copyNativeFiles("dist");
 }
 
 build().catch((e) => {
