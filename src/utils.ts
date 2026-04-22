@@ -1,8 +1,7 @@
-import { CompressionMethod } from "@actions/cache/lib/internal/constants";
-import * as utils from "@actions/cache/lib/internal/cacheUtils";
 import * as core from "@actions/core";
 import * as opendal from "opendal";
 import { State } from "./state";
+import { CompressionMethod, getCacheFileName } from "./cache-utils";
 
 export function isGhes(): boolean {
   const ghUrl = new URL(
@@ -83,7 +82,7 @@ export async function findObject(
   }
 
   for (const restoreKey of restoreKeys) {
-    const fn = utils.getCacheFileName(compressionMethod);
+    const fn = getCacheFileName(compressionMethod);
     core.debug(`Finding object with prefix: ${restoreKey}`);
     let objects = await listObjects(op, restoreKey);
     objects = objects.filter((o) => o.includes(fn));

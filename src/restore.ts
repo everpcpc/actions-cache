@@ -1,11 +1,16 @@
 import * as cache from "@actions/cache";
-import * as utils from "@actions/cache/lib/internal/cacheUtils";
-import { extractTar, listTar } from "@actions/cache/lib/internal/tar";
 import * as core from "@actions/core";
 import * as path from "path";
 import { Operator } from "opendal";
 import { State } from "./state";
 import * as fs from "fs";
+import {
+  getCompressionMethod,
+  getCacheFileName,
+  createTempDirectory,
+  extractTar,
+  listTar,
+} from "./cache-utils";
 import {
   findObject,
   formatSize,
@@ -36,10 +41,10 @@ async function restoreCache() {
 
       const op = new Operator(provider, { endpoint, bucket, root });
 
-      const compressionMethod = await utils.getCompressionMethod();
-      const cacheFileName = utils.getCacheFileName(compressionMethod);
+      const compressionMethod = await getCompressionMethod();
+      const cacheFileName = getCacheFileName(compressionMethod);
       const archivePath = path.join(
-        await utils.createTempDirectory(),
+        await createTempDirectory(),
         cacheFileName
       );
 

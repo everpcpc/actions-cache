@@ -1,11 +1,17 @@
 import * as cache from "@actions/cache";
-import * as utils from "@actions/cache/lib/internal/cacheUtils";
-import { createTar, listTar } from "@actions/cache/lib/internal/tar";
 import * as core from "@actions/core";
 import * as path from "path";
 import { State } from "./state";
 import { Operator } from "opendal";
 import * as fs from "fs";
+import {
+  getCompressionMethod,
+  getCacheFileName,
+  createTempDirectory,
+  resolvePaths,
+  createTar,
+  listTar,
+} from "./cache-utils";
 import {
   getInputAsArray,
   isGhes,
@@ -35,13 +41,13 @@ async function saveCache() {
     try {
       const op = new Operator(provider, { endpoint, bucket, root });
 
-      const compressionMethod = await utils.getCompressionMethod();
-      const cachePaths = await utils.resolvePaths(paths);
+      const compressionMethod = await getCompressionMethod();
+      const cachePaths = await resolvePaths(paths);
       core.debug("Cache Paths:");
       core.debug(`${JSON.stringify(cachePaths)}`);
 
-      const archiveFolder = await utils.createTempDirectory();
-      const cacheFileName = utils.getCacheFileName(compressionMethod);
+      const archiveFolder = await createTempDirectory();
+      const cacheFileName = getCacheFileName(compressionMethod);
       const archivePath = path.join(archiveFolder, cacheFileName);
 
       core.debug(`Archive Path: ${archivePath}`);
